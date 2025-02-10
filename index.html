@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building tech x bio x data.">
+    <title>Griff Labs</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔭</text></svg>">
+    <style>
+        :root {
+            --bg-primary: #0a0f1f;
+            --bg-secondary: #111827;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent: #60a5fa;
+            --border: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at top right, var(--bg-secondary), var(--bg-primary));
+            color: var(--text-primary);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            min-height: 100vh;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* This aligns the content vertically */
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            position: relative;
+            padding: 4rem 2rem;
+        }
+
+        .ambient-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            background: 
+                radial-gradient(circle at 80% 20%, var(--accent), transparent 40%),
+                radial-gradient(circle at 20% 80%, var(--accent), transparent 40%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h1::after {
+            content: "🔭";
+            font-size: 2rem;
+        }
+
+        .location {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .features li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .statement {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 3rem 0;
+            width: 100%;
+        }
+
+        .contact {
+            list-style: none;
+        }
+
+        .contact li {
+            margin-bottom: 1rem;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .contact a::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: var(--text-primary);
+        }
+
+        .contact a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .floating-dots {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 300px;
+            height: 300px;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .dot {
+            position: absolute;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .dot:nth-child(1) { width: 20px; height: 20px; top: 20%; left: 20%; animation-delay: 0s; }
+        .dot:nth-child(2) { width: 15px; height: 15px; top: 40%; left: 40%; animation-delay: -2s; }
+        .dot:nth-child(3) { width: 25px; height: 25px; top: 60%; left: 30%; animation-delay: -4s; }
+        .dot:nth-child(4) { width: 10px; height: 10px; top: 30%; left: 60%; animation-delay: -6s; }
+        .dot:nth-child(5) { width: 18px; height: 18px; top: 50%; left: 50%; animation-delay: -8s; }
+    </style>
+</head>
+<body>
+    <div class="ambient-background"></div>
+    <div class="floating-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <main class="container">
+        <h1>grifflabs.dev</h1>
+        <p class="location">tech ・ bio ・ data | 🇦🇺 🇺🇸</p>
+        
+        <ul class="features">
+            <li>10 years experience commercialising deep tech</li>
+            <li>AI + ML driven data-first solutions</li>
+            <li>driving real impact in biotech and healthcare</li>
+        </ul>
+
+        <p class="statement">Go beyond the PowerPoint. Give us a bell. 🔔</p>
+
+        <div class="divider"></div>
+
+        <ul class="contact">
+            <li><a href="mailto:contact@grifflabs.dev">contact@grifflabs.dev</a></li>
+            <li><a href="https://github.com/GriffLabsDev">github.com/GriffLabsDev</a></li>
+        </ul>
+    </main>
+</body>
+</html>
